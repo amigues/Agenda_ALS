@@ -16,9 +16,9 @@ $PDO = bd_connect();
 $sql = "INSERT INTO dados(nome, email, telefone, insta) VALUES(:nome, :email, :telefone, :insta)";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':nome',$nome);
-$stmt->bindParam(':nome',$email);
-$stmt->bindParam(':nome',$telefone);
-$stmt->bindParam(':nome',$insta);
+$stmt->bindParam(':email',$email);
+$stmt->bindParam(':telefone',$telefone);
+$stmt->bindParam(':insta',$insta);
 if ($stmt->execute())
 {
     header('Location: index.php');
