@@ -17,7 +17,7 @@
         <form action="add.php" method="post">
         <div class="form-group">
             <label for="name">Nome: </label>
-            <input type="text" class="form-control col-sm" name="name" style="whidth:25%;" placeholder="Informe o nome">
+            <input type="text" class="form-control col-sm" name="nome" style="whidth:25%;" placeholder="Informe o nome">
         </div>
         <div class="form-group">
             <label for="email">E-mail: </label>
@@ -31,7 +31,7 @@
             <label for="insta">Instagram: </label>
             <input type="text" class="form-control col-sm" name="insta" style="whidth:25%;" placeholder="Informe o @ do Instagram">
         </div>
-            <button> type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
     </body>

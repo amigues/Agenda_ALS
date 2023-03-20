@@ -12,7 +12,7 @@ if (empty($nome) || empty($email) || empty($telefone) || empty($insta))
     exit;
 }
 
-$PDO = bd_connect();
+$PDO = db_connect();
 $sql = "INSERT INTO dados(nome, email, telefone, insta) VALUES(:nome, :email, :telefone, :insta)";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':nome',$nome);
