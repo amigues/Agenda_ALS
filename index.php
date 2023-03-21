@@ -31,7 +31,7 @@ $stmt->execute();
             <h1>Agenda telefônica</h1>
             <p><a href="form-add.php">Adicionar usuário</a></p>
             <h2>Lista de usuário</h2>
-            <p>Total de usuários> <?php echo $total ?></p>
+            <p>Total de usuários: <?php echo $total ?></p>
             <?php if ($total > 0): ?>
             <table class="table table-striped" width="50%" border="1">
                 <thead>
@@ -43,12 +43,12 @@ $stmt->execute();
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($user = $stmt->fetch(PDO:FETCH_ASSOC)): ?>
+                    <?php while ($user = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                     <tr>
                         <td><?php echo $user['nome'] ?></td>
                         <td><?php echo $user['email'] ?></td>
                         <td><?php echo $user['telefone'] ?></td>
-                        <td><?php echo $user['instagram'] ?></td>
+                        <td><?php echo $user['insta'] ?></td>
                         <td>
                             <a href="form-edit.php?id=<?php echo $user['id'] ?>">Editar</a>
                             <a href="delete.php?id=<?php echo $user['id'] ?>" onclick="return confirm(' tem certeza que deseja remover?');">Remover<a>

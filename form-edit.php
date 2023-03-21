@@ -6,8 +6,8 @@ if (empty($id))
     echo "ID para alteração não definido";
     exit;
 }
-$PDO = db_conneect();
-$sql = "SELECT nome, email, telefone, insta FROM users WHERE id = :id";
+$PDO = db_connect();
+$sql = "SELECT nome, email, telefone, insta FROM dados WHERE id = :id";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -24,12 +24,11 @@ if (!is_array($user))
     <head>
         <meta charset="utf-8">
         <title>Editar contato</title>
-        <link rel="bootstrap/css/bootstrap.css" href="stylesheet">
-        <script rel="bootstrap/js/bootstrap.js"></script>
-        <script rel="bootstrap/js/bootstrap.js"></script>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <script src="bootstrap/js/bootstrap.js"></script>
     </head>
     <body>
-    <div class="conteiner">
+    <div class="container">
         <h1>AGENDA</h1>
         <h1>Edição de contato</h1>
         <form action="edit.php" method="post">
