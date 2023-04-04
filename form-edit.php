@@ -28,25 +28,26 @@ if (!is_array($user))
         <script src="bootstrap/js/bootstrap.js"></script>
     </head>
     <body>
+    <div class="jumbotron">
+        <p class="h2 text-center">Edição de contato</p>
+    </div>
     <div class="container">
-        <h1>AGENDA</h1>
-        <h1>Edição de contato</h1>
         <form action="edit.php" method="post">
         <div class="form-group">
             <label for="nome">Nome: </label>
-            <input type="text" class="form-control col-sm" name="nome" id="nome" style="width:25%;" value="<?php echo $user['nome'] ?>">
+            <input type="text" class="form-control col-sm" name="nome" id="nome" style="width:80%;" value="<?php echo $user['nome'] ?>">
         </div>
         <div class="form-group">
             <label for="email">Email: </label>
-            <input type="email" class="form-control col-sm" name="email" id="email" style="width:25%;" value="<?php echo $user['email'] ?>">
+            <input type="email" class="form-control col-sm" name="email" id="email" style="width:80%;" value="<?php echo $user['email'] ?>">
         </div>
         <div class="form-group">
             <label for="telefone">Telefone: </label>
-            <input type="text" class="form-control col-sm" name="telefone" id="telefone" style="width:25%;" value="<?php echo $user['telefone'] ?>">
+            <input type="text" class="form-control col-sm" name="telefone" id="telefone" style="width:80%;" value="<?php echo $user['telefone'] ?>">
         </div>
         <div class="form-group">
             <label for="insta">Insta: </label>
-            <input type="text" class="form-control col-sm" name="insta" id="insta" style="width:25%;" value="<?php echo $user['insta'] ?>">
+            <input type="text" class="form-control col-sm" name="insta" id="insta" style="width:80%;" value="<?php echo $user['insta'] ?>">
         </div>
             <input type="hidden" name="id" value="<?php echo $id ?>">
             <button type="submit" class="btn btn-primary">Alterar</button>

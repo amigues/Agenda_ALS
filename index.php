@@ -18,20 +18,44 @@ $stmt->execute();
         <title>Agenda</title>
 
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/jquery.js"></script>
     <style type="text/css">
         .container{
             margin.top: 50px;
-            margin-left: 100px;
+            /*margin-left: 100px;*/
         }
     </style>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+            <button class="navbar-toggler" typt="button" data-toggle="collapse" data-target="#navbarExample10" 
+                    aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="nav" href="#">
+                <!--imagem icon-->
+            </a>
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExemple10">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"> Início <span class="sr-only">(atual)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Tarefa</a>
+                            <!--parei aqui-->
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
+        </nav>
         <div class="container">
-            <h1>Agenda telefônica</h1>
-            <p><a href="form-add.php">Adicionar usuário</a></p>
-            <h2>Lista de usuário</h2>
-            <p>Total de usuários: <?php echo $total ?></p>
+            <h1>Agenda de contato</h1>
+            <p><a href="form-add.php">Adicionar contato</a></p>
+            <h2>Lista de contato</h2>
+            <p>Total de contato: <?php echo $total ?></p>
             <?php if ($total > 0): ?>
             <table class="table table-striped" width="50%" border="1">
                 <thead>
@@ -58,7 +82,7 @@ $stmt->execute();
             </tbody>
         </table>
         <?php else: ?>
-        <p>Nenhum usuário registrado</p>
+        <p>Nenhum contato registrado</p>
         <?php endif; ?>
         </div>
     </body>
