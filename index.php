@@ -19,8 +19,9 @@ $stmt->execute();
 
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="css/estilo.css" rel="stylesheet">
-    <script src="bootstrap/js/bootstrap.js"></script>
     <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/popper.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <style type="text/css">
         .container{
             margin.top: 50px;
@@ -34,7 +35,7 @@ $stmt->execute();
                     aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="nav" href="#">
+            <a class="navbar-brand" rel="home" href="#">
                 <!--imagem icon-->
             </a>
             <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExemple10">
@@ -44,16 +45,18 @@ $stmt->execute();
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Tarefa</a>
-                            <!--parei aqui-->
+                            aria-expanded="false">Cadastros</a>
+                        <div class="dropdown-menu" aria-labelleby="dropdown10">
+                        <a class="dropdown-item" href="form-add.php">Cadastrar contato</a>
+                        <a class="dropdown-item" href="form-add_telefone.php">Cadastrar telefone</a>
+                        <a class="dropdown-item" href="pesquisarContatos.php">Pesquisar contatos</a>
+                        </div>
                     </li>
-                    <li></li>
                 </ul>
             </div>
         </nav>
         <div class="container">
             <h1>Agenda de contato</h1>
-            <p><a href="form-add.php">Adicionar contato</a></p>
             <h2>Lista de contato</h2>
             <p>Total de contato: <?php echo $total ?></p>
             <?php if ($total > 0): ?>
