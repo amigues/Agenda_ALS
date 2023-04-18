@@ -2,22 +2,18 @@
 require_once 'init.php';
 
 $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
-$email = isset($_POST['email']) ? $_POST['email'] : null;
-$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : null;
 $insta = isset($_POST['insta']) ? $_POST['insta'] : null;
 
-if (empty($nome) || empty($email) || empty($telefone) || empty($insta))
+if (empty($nome) || empty($insta))
 {
     echo "Volte e preencha todos os campos";
     exit;
 }
 
 $PDO = db_connect();
-$sql = "INSERT INTO dados(nome, email, telefone, insta) VALUES(:nome, :email, :telefone, :insta)";
+$sql = "INSERT INTO dados(nome, insta) VALUES(:nome, :insta)";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':nome',$nome);
-$stmt->bindParam(':email',$email);
-$stmt->bindParam(':telefone',$telefone);
 $stmt->bindParam(':insta',$insta);
 if ($stmt->execute())
 {

@@ -15,13 +15,13 @@
     </head>
     <body>
     <div class="jumbotron">
-        <p class="h2 text-center">Cadastro de Telefone</p>
+        <p class="h2 text-center">Cadastro de Email</p>
     </div>
     <div class="container">
-        <form action="add_telefone.php" method="post">
+        <form action="add_email.php" method="post">
         <div class="form-group">
-            <label for="telefone">Telefone: </label>
-            <input type="text" class="form-control col-sm" name="telefone" style="width:80%;" placeholder="Informe o telefone">
+            <label for="email">Email: </label>
+            <input type="text" class="form-control col-sm" name="email" style="width:80%;" placeholder="Informe o email">
         </div>
         <div class="form-group">
             <label for="selectTipo">Selecione o contato</label>

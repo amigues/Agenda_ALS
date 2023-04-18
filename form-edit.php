@@ -7,7 +7,7 @@ if (empty($id))
     exit;
 }
 $PDO = db_connect();
-$sql = "SELECT nome, email, telefone, insta FROM dados WHERE id = :id";
+$sql = "SELECT  c.id, c.nome, c.insta, t.numero, e.email FROM dados AS c INNER JOIN telefone AS t ON c.id = t.dados_id INNER JOIN email AS e ON c.id = e.dados_id where c.id = :id";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -43,7 +43,7 @@ if (!is_array($user))
         </div>
         <div class="form-group">
             <label for="telefone">Telefone: </label>
-            <input type="text" class="form-control col-sm" name="telefone" id="telefone" style="width:80%;" value="<?php echo $user['telefone'] ?>">
+            <input type="text" class="form-control col-sm" name="telefone" id="telefone" style="width:80%;" value="<?php echo $user['numero'] ?>">
         </div>
         <div class="form-group">
             <label for="insta">Insta: </label>

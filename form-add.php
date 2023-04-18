@@ -20,14 +20,6 @@
             <input type="text" class="form-control col-sm" name="nome" style="width:80%;" placeholder="Informe o nome">
         </div>
         <div class="form-group">
-            <label for="email">E-mail: </label>
-            <input type="text" class="form-control col-sm" name="email" style="width:80%;" placeholder="Informe o e-mail">
-        </div>
-        <div class="form-group">
-            <label for="telefone">Telefone: </label>
-            <input type="text" class="form-control col-sm" name="telefone" style="width:80%;" placeholder="Informe o telefone">
-        </div>
-        <div class="form-group">
             <label for="insta">Instagram: </label>
             <input type="text" class="form-control col-sm" name="insta" style="width:80%;" placeholder="Informe o @ do Instagram">
         </div>
