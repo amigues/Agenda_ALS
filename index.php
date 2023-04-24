@@ -44,7 +44,7 @@ $stmt->execute();
                         <a class="nav-link" href="index.php"> Início <span class="sr-only">(atual)</span></a>
                     </li>
                     <li class="nav-item active">
-                            <a class="nav-link" href="page-add.php">Cadastrar</a>
+                            <a class="nav-link" href="page-add.html">Cadastrar</a>
                     </li>
                 </ul>
             </div>
