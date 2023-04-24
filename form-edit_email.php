@@ -39,17 +39,13 @@ if (!is_array($user))
     </head>
     <body>
         <div class="jumbotron">
-            <p class="h2 text-center">Editar de nome e instagram</p>
+            <p class="h2 text-center">Editar email</p>
         </div>
         <div class="container">
-            <form action="edit.php" method="post">
+            <form action="edit_email.php" method="post">
                 <div class="form-group">
                     <label for="nome">Nome: </label>
-                    <input type="text" class="form-control col-sm" name="nome" id="nome" style="width:80%;" value="<?php echo $user['nome'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="insta">Insta: </label>
-                    <input type="text" class="form-control col-sm" name="insta" id="insta" style="width:80%;" value="<?php echo $user['insta'] ?>">
+                    <input type="text" class="form-control col-sm" name="email" id="email" style="width:80%;" value="<?php echo $user['email'] ?>">
                 </div>
                 <input type="hidden" name="id" value="<?php echo $id ?>">
                 <a href="page-edit.php">

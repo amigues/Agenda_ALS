@@ -1,21 +1,19 @@
 <?php
 require_once 'init.php';
 
-$nome = isset($_POST['nome']) ? $_POST['nome'] : null;
-$insta = isset($_POST['insta']) ? $_POST['insta'] : null;
+$telefone = isset($_POST['telefone']) ? $_POST['telefone'] : null;
 $id = isset($_POST['id']) ? $_POST['id'] : null;
 
-if (empty($nome) || empty($insta))
+if (empty($telefone))
 {
     echo "Preencha todos os campos";
     exit;
 }
 
 $PDO = db_connect();
-$sql = "UPDATE dados SET nome = :nome, insta = :insta WHERE id = :id";
+$sql = "UPDATE telefone SET numero = :numero WHERE id = :id";
 $stmt = $PDO->prepare($sql);
-$stmt->bindParam(':nome', $nome);
-$stmt->bindParam(':insta', $insta);
+$stmt->bindParam(':numero', $telefone);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 if ($stmt->execute())
 {

@@ -38,19 +38,15 @@ if (!is_array($user))
         </style>
     </head>
     <body>
-        <div class="jumbotron">
-            <p class="h2 text-center">Editar de nome e instagram</p>
-        </div>
-        <div class="container">
-            <form action="edit.php" method="post">
-                <div class="form-group">
-                    <label for="nome">Nome: </label>
-                    <input type="text" class="form-control col-sm" name="nome" id="nome" style="width:80%;" value="<?php echo $user['nome'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="insta">Insta: </label>
-                    <input type="text" class="form-control col-sm" name="insta" id="insta" style="width:80%;" value="<?php echo $user['insta'] ?>">
-                </div>
+    <div class="jumbotron">
+        <p class="h2 text-center">Editar telefone</p>
+    </div>
+    <div class="container">
+        <form action="edit_telefone.php" method="post">
+            <div class="form-group">
+                <label for="nome">Telefone: </label>
+                <input type="text" class="form-control col-sm" name="telefone" id="telefone" style="width:80%;" value="<?php echo $user['numero'] ?>">
+            </div>
                 <input type="hidden" name="id" value="<?php echo $id ?>">
                 <a href="page-edit.php">
                     <button type="submit" class="btn btn-primary" id="button">Alterar</button>
@@ -58,7 +54,7 @@ if (!is_array($user))
                 <a href="page-edit.php" >
                     <button type="button" class="btn btn-primary" id="colorButton">Cancelar</button>
                 </a>
-            </form>
-        </div>
+        </form>
+    </div>
     </body>
 </html>

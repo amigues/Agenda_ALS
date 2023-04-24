@@ -43,14 +43,8 @@ $stmt->execute();
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php"> Início <span class="sr-only">(atual)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Cadastros</a>
-                        <div class="dropdown-menu" aria-labelleby="dropdown10">
-                        <a class="dropdown-item" href="form-add.php">Cadastrar contato</a>
-                        <a class="dropdown-item" href="form-add_telefone.php">Cadastrar telefone</a>
-                        <a class="dropdown-item" href="form-add_email.php">Cadastrar email</a>
-                        </div>
+                    <li class="nav-item active">
+                            <a class="nav-link" href="page-add.php">Cadastrar</a>
                     </li>
                 </ul>
             </div>
@@ -60,34 +54,34 @@ $stmt->execute();
             <h2>Lista de contato</h2>
             <p>Total de contato: <?php echo $total ?></p>
             <?php if ($total > 0): ?>
-            <table class="table table-striped" width="50%" border="2">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Instagram</th>
-                        <th>Telefone</th>
-                        <th>Email</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($user = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-                    <tr>
-                        <td><?php echo $user['nome'] ?></td>
-                        <td><?php echo $user['insta'] ?></td>
-                        <td><?php echo $user['numero'] ?></td>
-                        <td><?php echo $user['email'] ?></td>
-                        <td>
-                            <a href="form-edit.php?id=<?php echo $user['id'] ?>">Editar |</a>
-                            <a href="delete.php?id=<?php echo $user['id'] ?>" onclick="return confirm(' tem certeza que deseja remover?');"> Remover<a>
-                        </td>
-                    </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-        <p>Nenhum contato registrado</p>
-        <?php endif; ?>
+                <table class="table table-striped" width="50%" border="2">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Instagram</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <?php while ($user = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                        <tr>
+                            <td><?php echo $user['nome'] ?></td>
+                            <td><?php echo $user['insta'] ?></td>
+                            <td><?php echo $user['numero'] ?></td>
+                            <td><?php echo $user['email'] ?></td>
+                            <td>
+                                <a href="page-edit.php">Editar |</a>
+                                <a href="delete.php?id=<?php echo $user['id'] ?>" onclick="return confirm(' tem certeza que deseja remover?');"> Remover<a>
+                            </td>
+                        </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>Nenhum contato registrado</p>
+            <?php endif; ?>
         </div>
     </body>
 </html>
