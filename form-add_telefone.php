@@ -38,10 +38,10 @@
                         <?php endwhile; ?>
                     </select>
                 </div>
-                <a href="page-add.php">
+                <a href="page-add.html">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </a>
-                <a href="page-add.php" >
+                <a href="page-add.html" >
                     <button type="button" class="btn btn-primary" id="colorButton">Cancelar</button>
                 </a>
             </form>

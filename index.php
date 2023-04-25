@@ -4,7 +4,10 @@ require_once 'init.php';
 $PDO = db_connect();
 
 $sql_count = "SELECT COUNT(*) AS total FROM dados ORDER BY nome ASC";
-$sql = "SELECT  c.id, c.nome, c.insta, t.numero, e.email FROM dados AS c INNER JOIN telefone AS t ON c.id = t.dados_id INNER JOIN email AS e ON c.id = e.dados_id";
+$sql = "SELECT  c.id, c.nome, c.insta, t.numero, e.email FROM dados AS c 
+        INNER JOIN telefone AS t ON c.id = t.dados_id 
+        INNER JOIN email AS e ON c.id = e.dados_id
+        ORDER BY c.nome ASC";
 $stmt_count = $PDO->prepare($sql_count);
 $stmt_count->execute();
 $total = $stmt_count->fetchColumn();
@@ -72,7 +75,7 @@ $stmt->execute();
                             <td><?php echo $user['numero'] ?></td>
                             <td><?php echo $user['email'] ?></td>
                             <td>
-                                <a href="page-edit.php">Editar |</a>
+                                <a href="page-edit.php?id=<?php echo $user['id'] ?>">Editar |</a>
                                 <a href="delete.php?id=<?php echo $user['id'] ?>" onclick="return confirm(' tem certeza que deseja remover?');"> Remover<a>
                             </td>
                         </tr>

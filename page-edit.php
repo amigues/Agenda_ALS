@@ -1,16 +1,21 @@
 <?php
 require_once 'init.php';
 
+$id = isset($_GET['id']) ? $_GET['id'] : null;
 $PDO = db_connect();
 
 $sql_count = "SELECT COUNT(*) AS total FROM dados ORDER BY nome ASC";
-$sql = "SELECT  c.id, c.nome, c.insta, t.numero, e.email FROM dados AS c INNER JOIN telefone AS t ON c.id = t.dados_id INNER JOIN email AS e ON c.id = e.dados_id";
+$sql = "SELECT  c.id, c.nome, c.insta, t.numero, e.email FROM dados AS c 
+        INNER JOIN telefone AS t ON c.id = t.dados_id 
+        INNER JOIN email AS e ON c.id = e.dados_id 
+        WHERE c.id = :id";
 $stmt_count = $PDO->prepare($sql_count);
 $stmt = $PDO->prepare($sql);
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC)
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
     <head>
         <meta charset="utf-8" />

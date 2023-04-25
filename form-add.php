@@ -30,10 +30,10 @@
                     <label for="insta">Instagram: </label>
                     <input type="text" class="form-control col-sm" name="insta" style="width:80%;" placeholder="Informe o @ do Instagram">
                 </div>
-                <a href="page-add.php">
+                <a href="page-add.html">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </a>
-                <a href="page-add.php" >
+                <a href="page-add.html" >
                     <button type="button" class="btn btn-primary" id="colorButton">Cancelar</button>
                 </a>
             </form>

@@ -1,13 +1,16 @@
 <?php
 require 'init.php';
-$id = isset($_GET['id']) ? (int) $_GET['id'] : null;
+$id = isset($_GET['id']) ? $_GET['id'] : null;
 if (empty($id))
 {
     echo "ID para alteração não definido";
     exit;
 }
 $PDO = db_connect();
-$sql = "SELECT  c.id, c.nome, c.insta, t.numero, e.email FROM dados AS c INNER JOIN telefone AS t ON c.id = t.dados_id INNER JOIN email AS e ON c.id = e.dados_id where c.id = :id";
+$sql = "SELECT  c.id, c.nome, c.insta, t.numero, e.email FROM dados AS c 
+        INNER JOIN telefone AS t ON c.id = t.dados_id 
+        INNER JOIN email AS e ON c.id = e.dados_id 
+        WHERE c.id = :id";
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -48,10 +51,8 @@ if (!is_array($user))
                 <input type="text" class="form-control col-sm" name="telefone" id="telefone" style="width:80%;" value="<?php echo $user['numero'] ?>">
             </div>
                 <input type="hidden" name="id" value="<?php echo $id ?>">
-                <a href="page-edit.php">
+                <a href="index.php">
                     <button type="submit" class="btn btn-primary" id="button">Alterar</button>
-                </a>
-                <a href="page-edit.php" >
                     <button type="button" class="btn btn-primary" id="colorButton">Cancelar</button>
                 </a>
         </form>
